@@ -106,7 +106,7 @@ export async function sendContactEmail(formData: FormData) {
       `,
     }
 
-    // await transporter.sendMail(mailOptions)
+    await transporter.sendMail(mailOptions)
     await transporter2.sendMail(mailOptions)
 
     return {
