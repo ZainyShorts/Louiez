@@ -18,6 +18,9 @@ export default function ContactSection() {
     try {
       const result = await sendContactEmail(formData)
       if (result.success) {
+        if (typeof window !== "undefined" && window.fbq) {
+    window.fbq("track", "Contact");
+  }
         toast.success(result.message, {
           position: "top-right",
           autoClose: 6000,
